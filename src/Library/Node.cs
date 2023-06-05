@@ -7,6 +7,7 @@ namespace Library
     public class Node
     {
         private int number;
+        public Persona Padre;
 
         private List<Node> children = new List<Node>();
 
@@ -23,10 +24,9 @@ namespace Library
                 return this.children.AsReadOnly();
             }
         }
-
-        public Node(int number)
+        public Node(Persona padre)
         {
-            this.number = number;
+            this.Padre = padre;
         }
 
         public void AddChildren(Node n)
